@@ -1,26 +1,30 @@
 terraform {
   required_providers {
     cloudflare = {
-      source = "cloudflare/cloudflare"
+      source  = "cloudflare/cloudflare"
       version = "~> 4"
     }
   }
 }
 
-provider "cloudflare" {
-  api_token = "<YOUR_API_TOKEN>"
+variable "api_token" {
+  sensitive = true
 }
 
 variable "zone_id" {
-  default = "<YOUR_ZONE_ID>"
+  type = string
 }
 
 variable "account_id" {
-  default = "<YOUR_ACCOUNT_ID>"
+  type = string
 }
 
 variable "domain" {
-  default = "<YOUR_DOMAIN>"
+  type = string
+}
+
+provider "cloudflare" {
+  api_token = var.api_token
 }
 
 resource "cloudflare_record" "www" {
