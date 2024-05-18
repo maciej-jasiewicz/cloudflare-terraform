@@ -1,0 +1,4 @@
+api_token = "YOUR_CLOUD"
+zone_id = "YOUR_CLOUDFLARE_ZONE_ID"
+account_od = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+domain = "YOUR_DOMAIN"
